@@ -34,7 +34,12 @@ public class InactivosController {
         if (inactivos.getMotivo() != null) {
 
             inactivos.setEstado("Inactivo");
+            
+        } else {
+
+            inactivos.setEstado("Activo");
         }
+
 
         System.out.println(inactivos);
 
