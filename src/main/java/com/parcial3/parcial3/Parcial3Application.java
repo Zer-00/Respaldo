@@ -8,6 +8,7 @@ public class Parcial3Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Parcial3Application.class, args);
+		System.out.println("pinga grande");
 	}
 
 }
