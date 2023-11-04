@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.parcial3.parcial3.Entities.Empleado;
+import com.parcial3.parcial3.Repositories.EmpleadoRepository;
 import com.parcial3.parcial3.Service.EmpleadoService;
 
 import lombok.RequiredArgsConstructor;
@@ -26,22 +27,25 @@ public class EmpleadoController {
     @Autowired
     private EmpleadoService empleadoService;
 
+    @Autowired
+    private EmpleadoRepository repo;
+
     @GetMapping("/get")
     public List<Empleado> getEmpleado() {
 
-        return (List<Empleado>) empleadoService.getEmpleado();
+        return  repo.findAll();
     }
 
     @PostMapping("/create")
-    public Empleado newEmpleado (@RequestBody Empleado empleado) {
+    public Empleado createEmpleado (@RequestBody Empleado empleado) {
 
-        return empleadoService.creatEmpleado(empleado);
+        return repo.save(empleado);
     }
 
     @DeleteMapping(value = "/delete/{id}")
     public String deleteEmpleado (@PathVariable Integer id) {
 
-        empleadoService.deleteEmpleado(id);
+        repo.deleteById(id);;
 
         return "El Empleado se ha eliminado Correctamente";
     }

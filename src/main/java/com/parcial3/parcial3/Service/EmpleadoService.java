@@ -13,21 +13,21 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class EmpleadoService {
 
-    private EmpleadoRepository empleadoRepository;
+    private EmpleadoRepository repo;
 
-    public Empleado creatEmpleado (Empleado empleado) {
+    public Empleado createEmpleado (Empleado empleado) {
 
-        return empleadoRepository.save(empleado);
+        return repo.save(empleado);
     }
 
     public List<Empleado> getEmpleado() {
 
-        return (List<Empleado>) empleadoRepository.findAll();
+        return (List<Empleado>) repo.findAll();
     }
 
     public void deleteEmpleado(Integer id) {
 
-        empleadoRepository.deleteById(id);
+        repo.deleteById(id);
     }
     
 }

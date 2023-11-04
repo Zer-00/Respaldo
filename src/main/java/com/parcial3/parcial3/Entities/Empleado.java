@@ -27,5 +27,9 @@ public class Empleado {
 
     private String direccion;
 
-    private String telefeno;
+    private String telefono;
+
+    public Empleado () {
+        
+    }
 }
