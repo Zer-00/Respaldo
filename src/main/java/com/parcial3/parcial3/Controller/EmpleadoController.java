@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.parcial3.parcial3.Entities.Empleado;
 import com.parcial3.parcial3.Repositories.EmpleadoRepository;
-import com.parcial3.parcial3.Service.EmpleadoService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,8 +23,6 @@ import lombok.RequiredArgsConstructor;
 
 public class EmpleadoController {
 
-    @Autowired
-    private EmpleadoService empleadoService;
 
     @Autowired
     private EmpleadoRepository repo;
